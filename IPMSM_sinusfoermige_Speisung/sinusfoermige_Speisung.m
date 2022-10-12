@@ -1,6 +1,6 @@
-%% Es wurden alle "warnings deaktiviert" weil es die Anzeige sinnvoller Informationen gestˆrt hat
+%% Es wurden alle "warnings deaktiviert" weil es die Anzeige sinnvoller Informationen gest√∂rt hat
 % Mit diesem Befehl schaltet man die Warnungen an/ab: w = warning ('off','all');
-% Einfach on zu off tauschen, in die Commandozeile einf¸gen, fertig
+% Einfach on zu off tauschen, in die Commandozeile einf√ºgen, fertig
 
 % NoElP/(2*frq_el)
 % 1/frq_el*(1/6 + (1/6*1/4.023416))
@@ -14,7 +14,7 @@ sActiveFilename = matlab.desktop.editor.getActiveFilename;
 sMainPath = fileparts(sActiveFilename); 
 % Working Directory wechseln
 cd(sMainPath); 
-sPlotPath = fullfile(fileparts(fileparts(sMainPath)),'Pr√§sentationen','20220302_Pr√§sentation Abschlussbericht 2022');
+sPlotPath = fullfile(fileparts(fileparts(sMainPath)),'Pr√É¬§sentationen','20220302_Pr√É¬§sentation Abschlussbericht 2022');
 
 %% Maxwell-Schnittstelle
 % Name Ansys Projekt
@@ -36,42 +36,42 @@ end
 % gewuenschtes Design aktiv schalten
 oDesign2D = oProject.SetActiveDesign(sDesign2D); 
 
-%%  Definition aller Variablen und Funktionen f¸r die variation des Arbeitspunktes
+%%  Definition aller Variablen und Funktionen f√ºr die variation des Arbeitspunktes
 
-%% Definition aller Variablen und Funktionen f¸r die Berechnung des Referenzwertes
+%% Definition aller Variablen und Funktionen f√ºr die Berechnung des Referenzwertes
 Anzahl_Arbeitspunkte = 5;
-%Erstellen eines "cell arrays" f¸r die Daten des Simulationszeiten
+%Erstellen eines "cell arrays" f√ºr die Daten des Simulationszeiten
 Simulationszeit_Cell_aequidistant_1026 = cell(1,1);
-%Erstellen eines "cell arrays" f¸r die Daten des Drehmomentes
+%Erstellen eines "cell arrays" f√ºr die Daten des Drehmomentes
 Drehmoment_Cell_aequidistant_1026 = cell(1,1);
-%Erstellen eines "cell arrays" f¸r die Daten des Strom
+%Erstellen eines "cell arrays" f√ºr die Daten des Strom
 Strom_Cell_aequidistant_1026 = cell(1,1);
-%Erstellen eines "cell arrays" f¸r die Daten der Wirbelstromverluste
+%Erstellen eines "cell arrays" f√ºr die Daten der Wirbelstromverluste
 Wirbelstromverluste_gesamt_Cell_aequidistant_1026 = cell(1,1);
-%Erstellen eines "cell arrays" f¸r die Daten der Wirbelstromverluste (Mittelwert)
+%Erstellen eines "cell arrays" f√ºr die Daten der Wirbelstromverluste (Mittelwert)
 Wirbelstromverluste_Mittelwert_Cell_aequidistant_1026 = cell(1,1);
 
 
-%% Definition aller Variablen und Funktionen f¸r die Variation der NoS
-%Anzahl der Simulationen durch Vorgabe der Anzahl von for-Durchl‰ufen
+%% Definition aller Variablen und Funktionen f√ºr die Variation der NoS
+%Anzahl der Simulationen durch Vorgabe der Anzahl von for-Durchl√§ufen
 Anzahl_Simulationen = 6;
-%Definition um wie viel sich die NoS pro Iteration erhˆhen
+%Definition um wie viel sich die NoS pro Iteration erh√∂hen
 Erhoehung_NoS_pro_Schritt = 90;
 %Definition bei welchem Wert die 1. Iteration starten soll
 Start_NoS = 360;
-%Erstellen einer tempor‰ren "table" f¸r die Daten der Simulationen
+%Erstellen einer tempor√§ren "table" f√ºr die Daten der Simulationen
 temporaer_table = table();
-%Erstellen eines "cell arrays" f¸r die Daten des Simulationszeiten
+%Erstellen eines "cell arrays" f√ºr die Daten des Simulationszeiten
 Simulationszeit_Cell_aequidistant_180_900 = cell(1,Anzahl_Simulationen);
-%Erstellen eines "cell arrays" f¸r die Daten des Drehmomentes
+%Erstellen eines "cell arrays" f√ºr die Daten des Drehmomentes
 Drehmoment_Cell_aequidistant_180_900 = cell(1,Anzahl_Simulationen);
-%Erstellen eines "cell arrays" f¸r die Daten des Strom
+%Erstellen eines "cell arrays" f√ºr die Daten des Strom
 Strom_Cell_aequidistant_180_900 = cell(1,Anzahl_Simulationen);
-%Erstellen eines "cell arrays" f¸r die Daten der Wirbelstromverluste
+%Erstellen eines "cell arrays" f√ºr die Daten der Wirbelstromverluste
 Wirbelstromverluste_gesamt_Cell_aequidistant_180_900 = cell(1,Anzahl_Simulationen);
-%Erstellen eines "cell arrays" f¸r die Daten der Wirbelstromverluste
+%Erstellen eines "cell arrays" f√ºr die Daten der Wirbelstromverluste
 Wirbelstromverluste_Mittelwert_Cell_aequidistant_180_900 = cell(1,Anzahl_Simulationen);
-%Erstellen eines "cell arrays" f¸r die Daten der Wirbelstromverluste
+%Erstellen eines "cell arrays" f√ºr die Daten der Wirbelstromverluste
 Prozentuale_Abweichung_Simulation_Cell_aequidistant_180_900 = cell(1,Anzahl_Simulationen);
 
 
@@ -79,7 +79,7 @@ Prozentuale_Abweichung_Simulation_Cell_aequidistant_180_900 = cell(1,Anzahl_Simu
 Erste_NoS_str = num2str(Start_NoS+Erhoehung_NoS_pro_Schritt);
 Letzte_NoS_str = num2str(Start_NoS+Anzahl_Simulationen*Erhoehung_NoS_pro_Schritt);
 
-% Definition von Z‰hlern f¸r die Arbeitspunktstabelle
+% Definition von Z√§hlern f√ºr die Arbeitspunktstabelle
 Zaehler_I_rms = 2;
 Zaehler_frq_el = 3;
 Zaehler_zdTheta = 4;
@@ -90,12 +90,15 @@ for index_AP = 1:Anzahl_Arbeitspunkte
     d = datestr(now,formatOut);
     d_str = num2str(d);
     
+    %%   initParameter
     T = readtable("APe_1_5.xlsx");
     C = table2cell(T);
     I_rms = C{index_AP,Zaehler_I_rms};
     frq_el = C{index_AP,Zaehler_frq_el};
     zdTheta = C{index_AP,Zaehler_zdTheta};
     %% Festlegung der Arbeitspunkte
+    
+    %%  initMaxwell
     % Variable in den Design Properties anpassen EFFEKTIVSTROM
     mwChangeDesignVariable(oDesign2D, 'I_rms',I_rms, 'A');
     % Variable in den Design Properties anpassen ELEKTRISCHE FREQUENZ
@@ -105,8 +108,8 @@ for index_AP = 1:Anzahl_Arbeitspunkte
 
     index_AP_str = num2str(index_AP);
     
-    %% Simulation um Refernzwert f¸r den Arbeitspunkt zu berechnen
-    %Definition einer Variable f¸r "Number of Segments" in Abh‰ngigkeit des Index
+    %% Simulation um Refernzwert f√ºr den Arbeitspunkt zu berechnen
+    %Definition einer Variable f√ºr "Number of Segments" in Abh√§ngigkeit des Index
     NoS = 1026;
     %Umwandlung der Variable NoS in einen "String"
     NoS_str = num2str(NoS);
@@ -117,69 +120,70 @@ for index_AP = 1:Anzahl_Arbeitspunkte
     % Variable in den Design Properties anpassen NUMBER OF SEGMENTS
     mwChangeDesignVariable(oDesign2D, 'NoSegm', NoS, '');
     
+    %%  simVerluste
     % Start des Timers zur Messung der Simulationszeit
     tiSimStart = tic; % Zeit starten
     % Design analysieren
     oDesign2D.Analyze('Setup1');
     % Stoppen der Simulationszeit
     StopZeit = toc(tiSimStart); 
-    fprintf("AP%u: Simulation f¸r den Referenzwert mit %u Segmenten nach %.2f min fertig. \n",index_AP, NoS, StopZeit/60);
+    fprintf("AP%u: Simulation f√ºr den Referenzwert mit %u Segmenten nach %.2f min fertig. \n",index_AP, NoS, StopZeit/60);
     
     %% Ergebnis aus Maxwell exportieren
     oModule = oDesign2D.GetModule("ReportSetup");
-    oModule.UpdateReports(["Drehmoment", "Stroeme","Wirbelstromverluste_gesamt","Wirbelstromverluste_Mittelwert"]); % Reports updaten (nicht w√§hrend der Simulation, erst am Schluss!)
+    oModule.UpdateReports(["Drehmoment", "Stroeme","Wirbelstromverluste_gesamt","Wirbelstromverluste_Mittelwert"]); % Reports updaten (nicht w√É¬§hrend der Simulation, erst am Schluss!)
     oModule.ExportToFile("Drehmoment", fullfile(sMainPath,"Drehmoment.csv"), false);
     oModule.ExportToFile("Stroeme", fullfile(sMainPath,"Stroeme.csv"), false);
     oModule.ExportToFile("Wirbelstromverluste_gesamt", fullfile(sMainPath,"Wirbelstromverluste_gesamt.csv"), false);
     oModule.ExportToFile("Wirbelstromverluste_Mittelwert", fullfile(sMainPath,"Wirbelstromverluste_Mittelwert.csv"), false);
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - SIMULATIONSZEIT
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = table(StopZeit);
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = "Simulationszeit_s_"+NoS_str;
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Simulationszeit_Cell_aequidistant_1026(:,1) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - DREHMOMENT
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Drehmoment.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"Moving_Torque__Nm__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Drehmoment_Cell_aequidistant_1026(:,1) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - STROM
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Stroeme.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"InputCurrent_Phase_A__A__"+NoS_str,"InputCurrent_Phase_B__A__"+NoS_str,"InputCurrent_Phase_C__A__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variable "Strom" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variable "Strom" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Strom_Cell_aequidistant_1026(:,1) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - WIRBELSTROMVERLUSTE
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Wirbelstromverluste_gesamt.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"Wirbelstromverluste_gesamt__W__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Wirbelstromverluste_gesamt_Cell_aequidistant_1026(:,1) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - WIRBELSTROMVERLUSTE MITTELWERT
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Wirbelstromverluste_Mittelwert.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"Wirbelstromverluste_Mittelwert__W__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Wirbelstromverluste_Mittelwert_Cell_aequidistant_1026(:,1) = {temporaer_table};
 
     %bereinigt den Ordner IPMSMs.aedtresults
     oDesign2D.DeleteFullVariation("All", false);
-%% Schleife zur Variation der NoS Abweichung
-for index = 1:Anzahl_Simulationen
+    %% Schleife zur Variation der NoS Abweichung
+    for index = 1:Anzahl_Simulationen
 
-    %% Definition aler Variablen und Funktionen in Abh‰ngigkeit der "for-Schleife" 
-    %Definition einer Variable f¸r "Number of Segments" in Abh‰ngigkeit des Index
+    %% Definition aler Variablen und Funktionen in Abh√§ngigkeit der "for-Schleife" 
+    %Definition einer Variable f√ºr "Number of Segments" in Abh√§ngigkeit des Index
     NoS = Start_NoS+index*Erhoehung_NoS_pro_Schritt;
     %Umwandlung der Variable NoS in einen "String"
     NoS_str = num2str(NoS);
@@ -189,7 +193,8 @@ for index = 1:Anzahl_Simulationen
 
     % Variable in den Design Properties anpassen NUMBER OF SEGMENTS
     mwChangeDesignVariable(oDesign2D, 'NoSegm', NoS, '');
-
+    
+    %%  simVerluste
     % Start des Timers zur Messung der Simulationszeit
     tiSimStart = tic; % Zeit starten
     % Design analysieren
@@ -200,69 +205,69 @@ for index = 1:Anzahl_Simulationen
     
     %% Ergebnis aus Maxwell exportieren
     oModule = oDesign2D.GetModule("ReportSetup");
-    oModule.UpdateReports(["Drehmoment", "Stroeme","Wirbelstromverluste_gesamt","Wirbelstromverluste_Mittelwert"]); % Reports updaten (nicht w√§hrend der Simulation, erst am Schluss!)
+    oModule.UpdateReports(["Drehmoment", "Stroeme","Wirbelstromverluste_gesamt","Wirbelstromverluste_Mittelwert"]); % Reports updaten (nicht w√É¬§hrend der Simulation, erst am Schluss!)
     oModule.ExportToFile("Drehmoment", fullfile(sMainPath,"Drehmoment.csv"), false);
     oModule.ExportToFile("Stroeme", fullfile(sMainPath,"Stroeme.csv"), false);
     oModule.ExportToFile("Wirbelstromverluste_gesamt", fullfile(sMainPath,"Wirbelstromverluste_gesamt.csv"), false);
     oModule.ExportToFile("Wirbelstromverluste_Mittelwert", fullfile(sMainPath,"Wirbelstromverluste_Mittelwert.csv"), false);
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - SIMULATIONSZEIT
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = table(StopZeit);
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = "Simulationszeit_s_"+NoS_str;
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Simulationszeit_Cell_aequidistant_180_900(:,index) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - DREHMOMENT
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Drehmoment.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"Moving_Torque__Nm__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Drehmoment_Cell_aequidistant_180_900(:,index) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - STROM
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Stroeme.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"InputCurrent_Phase_A__A__"+NoS_str,"InputCurrent_Phase_B__A__"+NoS_str,"InputCurrent_Phase_C__A__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variable "Strom" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variable "Strom" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Strom_Cell_aequidistant_180_900(:,index) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - WIRBELSTROMVERLUSTE
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Wirbelstromverluste_gesamt.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"Wirbelstromverluste_gesamt__W__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Wirbelstromverluste_gesamt_Cell_aequidistant_180_900(:,index) = {temporaer_table};
     
     %% Daten einlesen und in Matlab-Cell-Array ablegen - WIRBELSTROMVERLUSTE MITTELWERT
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = readtable(fullfile(sMainPath,"Wirbelstromverluste_Mittelwert.csv"));
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = ["Time_Feinmodell"+NoS_str,"Wirbelstromverluste_Mittelwert__W__"+NoS_str];
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel "Drehmoment" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Wirbelstromverluste_Mittelwert_Cell_aequidistant_180_900(:,index) = {temporaer_table};
     
-
+    %%  calcDelta
     %% Berechnung der prozentualen Abweichung der Mittelwerte (Wirbelstromverluste) innerhalb einer Iteration
     Wert_Eins = Wirbelstromverluste_Mittelwert_Cell_aequidistant_180_900{:,index};
     Iteration_Eins = Wert_Eins{:,2};
     Iteration_Zwei = Wirbelstromverluste_Mittelwert_Cell_aequidistant_1026{1,1}{1,2};
     Prozentuale_Abweichung_Simulationen = abs((Iteration_Zwei-Iteration_Eins)/Iteration_Zwei*100);
     %Abspeichern in "cell"
-    % Einlesen der Daten aus gew‰hltem .csv File in MATLAB Tabelle
+    % Einlesen der Daten aus gew√§hltem .csv File in MATLAB Tabelle
     temporaer_table = table(Prozentuale_Abweichung_Simulationen);
-    % Bezeichnung der Spalten geeignet ‰ndern
+    % Bezeichnung der Spalten geeignet √§ndern
     temporaer_table.Properties.VariableNames = "Prozentuale_Abweichung_Simulationen_"+NoS_str+"_zu_"+NoS_Max_str;
-    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel " Prozentuale_Abweichung_Simulationen" in einer neuen Zelle (spaltenweise) in Abh‰ngigkeit des Index
+    % abspeichern der Daten jedes Simulationsdurchlaufes der Variabel " Prozentuale_Abweichung_Simulationen" in einer neuen Zelle (spaltenweise) in Abh√§ngigkeit des Index
     Prozentuale_Abweichung_Simulation_Cell_aequidistant_180_900(:,index) = {temporaer_table};
     %Ausgabe der aktuellen Abweichung
-    fprintf("AP%u: Die aktuelle Abweichung einer Anzahl der NoS von %u zu %d betr‰gt %.2f%%. \n",index_AP, NoS, NoS_Max, Prozentuale_Abweichung_Simulationen);
+    fprintf("AP%u: Die aktuelle Abweichung einer Anzahl der NoS von %u zu %d betr√§gt %.2f%%. \n",index_AP, NoS, NoS_Max, Prozentuale_Abweichung_Simulationen);
     if Prozentuale_Abweichung_Simulationen<1
-        fprintf("AP%u: Die aktuelle Abweichung betr‰gt weniger als 1%% (%.2f%%). Das Simulationsziel wurde erreicht. \n",index_AP, Prozentuale_Abweichung_Simulationen);
+        fprintf("AP%u: Die aktuelle Abweichung betr√§gt weniger als 1%% (%.2f%%). Das Simulationsziel wurde erreicht. \n",index_AP, Prozentuale_Abweichung_Simulationen);
     end
     filename = "AP"+AP_str+"_Simulation_"+Erste_NoS_str+"_"+Letzte_NoS_str+"_"+d_str+"_Feinmodell_volle_Periode.mat";
     save(filename)
@@ -312,7 +317,7 @@ Tabelle_Verlauf_Wirbelstromverluste{:,:} = round(Tabelle_Verlauf_Wirbelstromverl
 Tabelle_Verlauf_Wirbelstromverluste.Properties.VariableNames = ["x","y"];
 %bestimmt wo die Textdateien abgespeichert werden
 table_path_format_Verlauf_Wireblstromverluste = fullfile(Ordner_Verlauf_Wirbelstromverluste, "AP"+index_AP_str+"_Wirbelstromverluste_Verlauf_"+NoS_Benennung_str+".txt");
-%ausgeben der Tabelle f¸r die Prozentuale Abweichung als Textdatei f¸r jede einzelne Simulation in einer seperaten Textdatei
+%ausgeben der Tabelle f√ºr die Prozentuale Abweichung als Textdatei f√ºr jede einzelne Simulation in einer seperaten Textdatei
 writetable(Tabelle_Verlauf_Wirbelstromverluste,table_path_format_Verlauf_Wireblstromverluste,"Delimiter"," ");
     
 %wie man Daten aus einem "cell" extrahiert und in eine Tabelle schreibt
@@ -352,7 +357,7 @@ end
 Tabelle_NoS_Prozentuale_Abweichung.Properties.VariableNames = ["x","y"];
 %bestimmt wo die Textdateien abgespeichert werden
 table_path_format_NoS_Prozentuale_Abweichung = fullfile(Ordner_Verlauf_Simulationszeit_Prozentuale_Abweichung, "AP"+index_AP_str+"_NoS_Prozentuale_Abweichung_"+Nos_Min_str+"_"+Nos_Max_str+".txt");
-%ausgeben der Tabelle f¸r die Prozentuale Abweichung (y-Achse) ¸ber der Simulationszeit (x-Achse) als Textdatei
+%ausgeben der Tabelle f√ºr die Prozentuale Abweichung (y-Achse) √ºber der Simulationszeit (x-Achse) als Textdatei
 writetable(Tabelle_NoS_Prozentuale_Abweichung,table_path_format_NoS_Prozentuale_Abweichung,"Delimiter"," ");
 
 %% Daten der prozentualen Abweichung und Simulationszeit liegen jetzt alle in Tabellen vor 
@@ -361,7 +366,7 @@ writetable(Tabelle_NoS_Prozentuale_Abweichung,table_path_format_NoS_Prozentuale_
 Tabelle_NoS_Simulationszeit.Properties.VariableNames = ["x","y"];
 %bestimmt wo die Textdateien abgespeichert werden
 table_path_format_NoS_Simulationszeit = fullfile(Ordner_Verlauf_Simulationszeit_Prozentuale_Abweichung, "AP"+index_AP_str+"_NoS_Simulationszeit_"+Nos_Min_str+"_"+Nos_Max_str+".txt");
-%ausgeben der Tabelle f¸r die Prozentuale Abweichung (y-Achse) ¸ber der Simulationszeit (x-Achse) als Textdatei
+%ausgeben der Tabelle f√ºr die Prozentuale Abweichung (y-Achse) √ºber der Simulationszeit (x-Achse) als Textdatei
 writetable(Tabelle_NoS_Simulationszeit,table_path_format_NoS_Simulationszeit,"Delimiter"," ");
 fprintf("AP%u: Daten wurden erfolgreich abgespeichert. \n",index_AP);
 % Ende Variation Arbeitspunkte 
